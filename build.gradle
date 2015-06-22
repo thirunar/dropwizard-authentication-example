@@ -1,0 +1,36 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'application'
+
+group = 'com.rightminds'
+version = '1.0-SNAPSHOT'
+ext.packaging = 'tar'
+mainClassName = 'com.rightminds.HelloWorldApplication'
+sourceCompatibility = '1.7'
+targetCompatibility = '1.7'
+
+repositories {
+    mavenCentral()
+}
+
+artifacts {
+    archives distTar
+}
+
+
+run {
+    args 'server', 'dropwizard.yml'
+}
+project.ext {
+    dropwizardVersion = '0.6.2'
+    mainClassName = 'com.rightminds.HelloWorldApplication'
+}
+
+dependencies {
+    compile group: 'com.yammer.dropwizard', name: 'dropwizard-core', version: dropwizardVersion
+    compile group: 'com.yammer.dropwizard', name: 'dropwizard-jdbi', version: dropwizardVersion
+    compile group: 'com.yammer.dropwizard', name: 'dropwizard-migrations', version: dropwizardVersion
+    compile group: 'com.yammer.dropwizard', name: 'dropwizard-testing', version: dropwizardVersion
+    compile fileTree('lib')
+    runtime group: 'postgresql', name: 'postgresql', version: '9.1-901.jdbc4'
+}

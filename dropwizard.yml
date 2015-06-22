@@ -1,0 +1,17 @@
+template: Hello, %s!
+defaultName: ${DW_DEFAULT_NAME:-Stranger}
+
+database:
+  driverClass: org.postgresql.Driver
+  user: postgres
+  password: password
+  url: jdbc:postgresql://localhost/dropwizard/
+  properties:
+    charSet: UTF-8
+  maxWaitForConnection: 5s
+  validationQuery: "/* MyService Health Check */ SELECT 1"
+  minSize: 8
+  maxSize: 32
+  checkConnectionWhileIdle: false
+  checkConnectionHealthWhenIdleFor: 10s
+  closeConnectionIfIdleFor: 1 minute
