@@ -1,7 +1,9 @@
 package com.rightminds.resources;
 
+import com.rightminds.model.UserDetails;
 import com.rightminds.repository.UserDetailsRepository;
 import com.rightminds.utils.ResponseFactory;
+import io.dropwizard.auth.Auth;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -20,7 +22,7 @@ public class UserDetailsResource {
 
 	@GET
 	@Produces(MediaType.TEXT_PLAIN)
-	public Response users(@QueryParam("name") String name) throws IOException {
+	public Response users(@Auth UserDetails userDetails, @QueryParam("name") String name) throws IOException {
 		return ResponseFactory.ok(userDetailsRepository.findById(name));
 	}
 	

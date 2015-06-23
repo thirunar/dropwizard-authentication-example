@@ -5,7 +5,7 @@ apply plugin: 'application'
 group = 'com.rightminds'
 version = '1.0-SNAPSHOT'
 ext.packaging = 'tar'
-mainClassName = 'com.rightminds.HelloWorldApplication'
+mainClassName = 'com.rightminds.UserDetailsApplication'
 sourceCompatibility = '1.7'
 targetCompatibility = '1.7'
 
@@ -22,15 +22,17 @@ run {
     args 'server', 'dropwizard.yml'
 }
 project.ext {
-    dropwizardVersion = '0.6.2'
-    mainClassName = 'com.rightminds.HelloWorldApplication'
+    dropwizardVersion = '0.8.0'
+    mainClassName = 'com.rightminds.UserDetailsApplication'
 }
 
 dependencies {
-    compile group: 'com.yammer.dropwizard', name: 'dropwizard-core', version: dropwizardVersion
-    compile group: 'com.yammer.dropwizard', name: 'dropwizard-jdbi', version: dropwizardVersion
-    compile group: 'com.yammer.dropwizard', name: 'dropwizard-migrations', version: dropwizardVersion
-    compile group: 'com.yammer.dropwizard', name: 'dropwizard-testing', version: dropwizardVersion
+    compile group: 'io.dropwizard', name: 'dropwizard-core', version: dropwizardVersion
+    compile group: 'io.dropwizard', name: 'dropwizard-jdbi', version: dropwizardVersion
+    compile group: 'io.dropwizard', name: 'dropwizard-migrations', version: dropwizardVersion
+    compile group: 'io.dropwizard', name: 'dropwizard-testing', version: dropwizardVersion
+    compile group: 'io.dropwizard', name: 'dropwizard-auth', version: dropwizardVersion
+
     compile fileTree('lib')
     runtime group: 'postgresql', name: 'postgresql', version: '9.1-901.jdbc4'
 }
