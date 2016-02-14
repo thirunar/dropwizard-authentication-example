@@ -5,7 +5,7 @@
     <title>Dropwizard Authentication Example by thirunar</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
@@ -20,22 +20,22 @@
 
     <section class="main-content">
       <h1>
-<a id="dropwizard-authentication" class="anchor" href="#dropwizard-authentication" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dropwizard Authentication</h1>
+<a id="dropwizard-authentication" class="anchor" href="#dropwizard-authentication" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dropwizard Authentication</h1>
 
-<p>This project illustrates how we can implement the authentication mechanism using Dropwizard and also tells about connecting Postgres data and creating few REST APIs for adding data to the database. In this example, I'm adding Person details (UserDetails) to the database.</p>
+<p>This project illustrates how authentication can be done using Dropwizard and also tells about connecting Postgres data and creating few REST APIs for adding data to the database. In this example, person details is being added to database using REST API after the authentication.</p>
 
 <h2>
-<a id="steps" class="anchor" href="#steps" aria-hidden="true"><span class="octicon octicon-link"></span></a>Steps</h2>
+<a id="steps" class="anchor" href="#steps" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Steps</h2>
 
 <pre><code>$ cd your_repo_root/repo_name
 $ gradle clean build
 $ gradle run
 </code></pre>
 
-<p>This starts the service in 8080 port. If you browse http://localhost:8080/user-details?name=thiru the browser requests for the username and password. In this example, I'm fetching the username and password from the dropwizard.yml but normally the username and password has to be fetched from database or LDAP server.</p>
+<p>This starts the service in 8080 port. If you browse http://localhost:8080/user-details?name=thiru the browser requests for the username and password. The username and password is in the dropwizard.yml (ideally, the username and password has to be fetched from other source like database). </p>
 
 <h2>
-<a id="overview-of-project-structure" class="anchor" href="#overview-of-project-structure" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overview of project structure</h2>
+<a id="overview-of-project-structure" class="anchor" href="#overview-of-project-structure" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overview of project structure</h2>
 
 <ul>
 <li>UserDetailsApplication is the Dropwizard Application class</li>
@@ -67,4 +67,3 @@ $ gradle run
 
   </body>
 </html>
-
