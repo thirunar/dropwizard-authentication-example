@@ -1,5 +1,5 @@
 # Dropwizard Authentication
-This project illustrates how we can implement the authentication mechanism using Dropwizard and also tells about connecting Postgres data and creating few REST APIs for adding data to the database. In this example, person details is being added to database using REST API after the authentication.
+This project illustrates how authentication can be done using Dropwizard and also tells about connecting Postgres data and creating few REST APIs for adding data to the database. In this example, person details is being added to database using REST API after the authentication.
 
 ##Steps
 ```
