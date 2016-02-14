@@ -1,5 +1,5 @@
 # Dropwizard Authentication
-This project illustrates how we can implement the authentication mechanism using Dropwizard and also tells about connecting Postgres data and creating few REST APIs for adding data to the database. In this example, I'm adding Person details (UserDetails) to the database.
+This project illustrates how we can implement the authentication mechanism using Dropwizard and also tells about connecting Postgres data and creating few REST APIs for adding data to the database. In this example, person details is being added to database using REST API after the authentication.
 
 ##Steps
 ```
@@ -8,7 +8,7 @@ $ gradle clean build
 $ gradle run
 ```
 
-This starts the service in 8080 port. If you browse http://localhost:8080/user-details?name=thiru the browser requests for the username and password. In this example, I'm fetching the username and password from the dropwizard.yml but normally the username and password has to be fetched from database or LDAP server.
+This starts the service in 8080 port. If you browse http://localhost:8080/user-details?name=thiru the browser requests for the username and password. The username and password is in the dropwizard.yml (ideally, the username and password has to be fetched from other source like database). 
 
 ##Overview of project structure
 * UserDetailsApplication is the Dropwizard Application class
